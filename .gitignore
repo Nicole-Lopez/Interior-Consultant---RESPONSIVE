@@ -197,4 +197,6 @@ samples/ios/Continote/Continote/FCNContinue.m
 *.swp
 
 
-firebase/
+.firebase/
+firebase.json
+404.html
