@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora&family=Montserrat:wght@500&display=swap');
+
+nav{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 50px 76px 85px 85px;
+}
+
+	.logo {
+		font: normal 200 20px 'Crimson Pro';
+		padding: 14px;
+		border: 1px solid;
+
+	}
+    
+	.enlaces-menu{
+		display: flex;
+		flex-direction: row;
+		list-style: none;
+	}
+
+	  	.enlaces-menu li{
+	    	margin: 0 43px;
+	    	transition: 0.3s;
+	  	}
+
+			#home {
+				padding:0 1px 8px 1px;
+				border-bottom: 2px solid;
+				font-weight: bold;
+				max-width: 150px;
+			}
+
+			.enlaces-menu a {
+				display: block;
+				position: relative;
+				overflow: hidden;
+				font: normal 500 18px 'Montserrat';
+			}
+
+				.enlaces-menu a span:first-child {
+					display: inline-block;
+					padding: 10px;
+				}
+
+				.enlaces-menu a span:last-child {
+				  	position: absolute;
+				  	font-size: 30px;
+				  	top: 0;
+				  	right: 0;
+				  	bottom: 0;
+				  	left: 0;
+				  	display: flex;
+				  	align-items: center;
+				  	justify-content: center;
+				  	transform: translateY(-100%);
+				}
+
+				.enlaces-menu a span {
+				  	transition: transform 0.2s ease-out;
+				}
+				 
+				.enlaces-menu a:hover span:first-child {
+				  	transform: translateY(100%);
+				}
+				 
+				.enlaces-menu a:hover span:last-child {
+				  	transform: none;
+				}
+
+  	.ham{
+	    display:none;
+	    background-color:transparent;
+	    cursor: pointer;
+	    border:none;
+	    padding-top: 5px;
+	    color:#ffffff;
+	    font-size: 30px;
+    }
+
+
+
+
+@media screen and (max-width: 930px){
+    nav{
+        flex-direction:column;
+        align-items: flex-start;
+        padding: 30px 20px 10px 20px;
+
+    }
+
+		.logo{
+			font-size: 14px;
+			padding: 10px;
+		}
+		    .ham{
+		        display:block;
+		        position: absolute; 
+		        top:25px;
+		        right:25px;
+		        transition: 0.2s  0.1s; 
+		    }
+		    
+		    .enlaces-menu{
+		      
+		        flex-direction:column;
+		        justify-content: center;
+		        align-items:center;
+		        height: 92vh;         
+		        margin:0;
+		        padding:0; 
+		        display:none;
+		        opacity:0;
+		        transition: opacity 5s ease-out;
+		        width:100%;
+		    }
+
+			    .enlaces-menu li{
+				    text-align:center;
+				    margin-bottom: 30px;
+				    width:100%;   
+			  	}
+
+}
+
+
+@keyframes muestraMenu {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+ 	.enlaces-menu.active{
+ 	    display:flex; 
+ 	    animation: muestraMenu 350ms ease-in-out both;
+ 	}
+
+ 	  .logo.active{
+ 	    display:none;
+ 	    animation: muestraMenu 350ms ease-in-out both;
+ 	}
